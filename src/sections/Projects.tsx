@@ -146,7 +146,8 @@ export default function Projects() {
 
         <div
           ref={gridRef}
-          className="projects-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+          // className="projects-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+          className="projects-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start"
           style={{ perspective: "1000px" }}
         >
           {projects.map((project) => (
