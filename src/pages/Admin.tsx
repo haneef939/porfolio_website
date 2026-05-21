@@ -27,6 +27,7 @@ interface ProjectForm {
   features: string;
   impact: string;
   image: string;
+  link: string;
 }
 
 const emptyForm: ProjectForm = {
@@ -37,10 +38,14 @@ const emptyForm: ProjectForm = {
   features: "",
   impact: "",
   image: "/project-amanah.jpg",
+  link: "",
 };
 
 const IMAGE_OPTIONS = [
   "/project-amanah.jpg",
+  "/project-gemini.jpg",
+  "/project-tapdonate.jpg",
+  "/project-salim.jpg",
   "/project-myclone.jpg",
   "/project-gtc.jpg",
   "/project-rocklove.jpg",
@@ -77,6 +82,7 @@ export default function Admin() {
         features: feats,
         impact: form.impact || undefined,
         image: form.image,
+        link: form.link || undefined,
       });
       setProjects(updated);
       setEditingId(null);
@@ -89,6 +95,7 @@ export default function Admin() {
         features: feats,
         impact: form.impact || undefined,
         image: form.image,
+        link: form.link || undefined,
       });
       setProjects(updated);
     }
@@ -106,6 +113,7 @@ export default function Admin() {
       features: project.features.join("\n"),
       impact: project.impact || "",
       image: project.image,
+      link: project.link || "",
     });
     setEditingId(project.id);
     setShowForm(true);
@@ -295,6 +303,21 @@ export default function Admin() {
                   ))}
                 </select>
               </div>
+            </div>
+
+            <div className="mb-6">
+              <label className="block text-xs font-mono text-slate mb-1.5">
+                Project Link (optional)
+              </label>
+              <input
+                type="url"
+                value={form.link}
+                onChange={(e) =>
+                  setForm({ ...form, link: e.target.value })
+                }
+                className="w-full bg-void border border-white/10 rounded px-3 py-2.5 text-sm focus:border-saffron focus:outline-none transition-colors"
+                placeholder="https://..."
+              />
             </div>
 
             <div className="flex items-center gap-3">

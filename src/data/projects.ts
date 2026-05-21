@@ -7,9 +7,26 @@ export interface Project {
   features: string[];
   impact?: string;
   image: string;
+  link?: string;
 }
 
 const defaultProjects: Project[] = [
+  {
+    id: "gemini-cms",
+    title: "Gemini",
+    description: "Secure, Scalable, and Cloud-based CMS designed to simplify content delivery across digital screens. Centralizes control for managing campaigns, corporate communications, and DOOH Advertising.",
+    technologies: ["Flutter", "Cloud", "CMS", "DOOH", "Firebase"],
+    date: "2024 - Present",
+    features: [
+      "Centralized content management for digital screens and signage",
+      "Campaign management for corporate communications and DOOH advertising",
+      "Cloud-based architecture for scalable content delivery",
+      "Secure content distribution across multiple digital endpoints"
+    ],
+    impact: "Enterprise-grade digital signage CMS",
+    image: "/project-gemini.jpg",
+    link: "https://www.figma.com/deck/6H2RrjQ4fcSDsjqe3ZtS9s"
+  },
   {
     id: "amanah-halal",
     title: "Amanah Halal Engine",
@@ -23,7 +40,38 @@ const defaultProjects: Project[] = [
       "Identity Compliance: face recognition-based slaughterman authentication"
     ],
     impact: "Government-ready compliance tracking dashboard",
-    image: "/project-amanah.jpg"
+    image: "/project-amanah.jpg",
+    link: "https://www.figma.com/deck/8njTy8rjqqSt2s4ZGl2HNj"
+  },
+  {
+    id: "tap-donate",
+    title: "TapDonate",
+    description: "Seamless donation collection app that enables users to select donation amounts and tap their card — funds are automatically deducted. Intuitive, smooth, and straightforward user experience.",
+    technologies: ["Flutter", "Dart", "NFC", "Payment Gateway", "Provider"],
+    date: "2024",
+    features: [
+      "Card-tap donation: Users simply tap their card to donate — no manual entry needed",
+      "Preset donation amounts for quick one-tap giving",
+      "Smooth and intuitive UX designed for frictionless donations",
+      "Secure payment processing with automatic fund deduction"
+    ],
+    impact: "Streamlined donation process with tap-to-pay technology",
+    image: "/project-tapdonate.jpg"
+  },
+  {
+    id: "salim",
+    title: "Salim",
+    description: "Comprehensive maintenance services platform for individuals and companies. Users get services across AC, plumbing, electrical, cleaning, and more — with real-time order tracking and in-app chat with service providers.",
+    technologies: ["Flutter", "Firebase", "Real-time Chat", "Push Notifications", "REST APIs"],
+    date: "2023",
+    features: [
+      "Multi-category maintenance services: Refrigeration, AC, cleaning, plumbing, electrical repairs",
+      "Real-time order status tracking from booking to completion",
+      "In-app chat feature to engage with service providers once the order starts",
+      "Service provider management and order lifecycle updates"
+    ],
+    impact: "All-in-one maintenance service platform with live tracking and chat",
+    image: "/project-salim.jpg"
   },
   {
     id: "more-betters",
@@ -51,7 +99,8 @@ const defaultProjects: Project[] = [
       "Optimized sync architecture for real-time data processing"
     ],
     impact: "Reduced scan processing time from 50 min to 5-7 min (86% improvement). Cut cloud costs by 98%.",
-    image: "/project-myclone.jpg"
+    image: "/project-myclone.jpg",
+    link: "https://www.figma.com/deck/iVJzPYSN3d8aFTlNQl1xB8"
   },
   {
     id: "best-buy-mall",
@@ -64,7 +113,8 @@ const defaultProjects: Project[] = [
       "Store management for remote store operations (pickup, dine-in, delivery)",
       "Search and registration for seamless product browsing and ordering"
     ],
-    image: "/project-bestbuy.jpg"
+    image: "/project-bestbuy.jpg",
+    link: "https://www.figma.com/deck/8zHN4nf4Sj0oKnYbnMVjJ0"
   },
   {
     id: "gtc-app",
@@ -96,7 +146,7 @@ const defaultProjects: Project[] = [
   }
 ];
 
-const STORAGE_KEY = "portfolio-projects";
+const STORAGE_KEY = "portfolio-projects-v3";
 
 export function getProjects(): Project[] {
   try {

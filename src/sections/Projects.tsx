@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { getProjects, type Project } from "../data/projects";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ExternalLink } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,9 +38,23 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <h3 className="font-grotesk font-semibold text-xl sm:text-2xl text-off-white mb-2 group-hover:text-saffron transition-colors">
-          {project.title}
-        </h3>
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h3 className="font-grotesk font-semibold text-xl sm:text-2xl text-off-white group-hover:text-saffron transition-colors">
+            {project.title}
+          </h3>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 mt-1 p-1.5 text-slate hover:text-saffron bg-white/5 hover:bg-saffron/10 rounded transition-all"
+              aria-label="View project"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ExternalLink size={14} />
+            </a>
+          )}
+        </div>
 
         <p className="text-sm text-slate leading-relaxed mb-3 line-clamp-3">
           {project.description}
